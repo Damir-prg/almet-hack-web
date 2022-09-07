@@ -1,0 +1,10 @@
+.myInput{
+    width: 80%;
+    outline: none;
+    border: none;
+    margin: 10px;
+    height: 4em;
+    background: transparent;
+    border-bottom: dashed 2px rgba(255, 0, 0, 0.5);
+    color: #fff;
+}
