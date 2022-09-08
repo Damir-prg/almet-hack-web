@@ -1,11 +1,10 @@
 import React from 'react';
-import HeaderButton from './UI/HeaderButton/HeaderButton';
+import MyButton from './UI/Button/MyButton';
 
 const Header = () => {
     return (
         <div className='header'>
-            <h1>A-FISHKA</h1>
-            <HeaderButton>Войти</HeaderButton>
+            <MyButton>Войти</MyButton>
         </div>
     );
 };
