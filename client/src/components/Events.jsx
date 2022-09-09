@@ -1,18 +1,13 @@
 import React from 'react';
 import Event from './Event';
 
-const Events = () => {
+const Events = ({events}) => {
 
     return (
         <div className='container'>
-            <Event/>
-            <Event/>
-            <Event/>
-            <Event/>
-            <Event/>
-            <Event/>
-            <Event/>
-            <Event/>
+            {events.map(event => (
+                <Event key={event.id} event={event}/>
+            ))}
         </div>
     );
 };

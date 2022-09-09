@@ -9,6 +9,7 @@
     border-radius: 50%;
     background: #EBEBEB;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+    overflow: visible;
 }
 
 .ellips:hover {
@@ -27,7 +28,7 @@
 
 .left {
     top: 45%;
-    left: -60px;
+    left: 12vw;
 }
 
 .arrowLeft {
@@ -36,7 +37,7 @@
 
 .right {
     top: 45%;
-    right: -55px;
+    right: 12vw;
 }
 
 .arrowRight {

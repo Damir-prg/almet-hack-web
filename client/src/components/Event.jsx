@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Event = ({ children }) => {
+const Event = ({ event }) => {
     return (
         <div className='eventCard'>
             <div className='eventHeader'>
-                <span className='manrope'>Учебные мероприятия</span>
-                <span>АФ КНИТУ-КАИ</span>
-                <h3>День учителя</h3>
+                <span className='manrope'>{event.type}</span>
+                <span>{event.preview}</span>
+                <h3>{event.name}</h3>
             </div>
             <div className='eventBody'>
                 <div className='eventBody__img'>
@@ -16,18 +16,18 @@ const Event = ({ children }) => {
                     <div>
                         <div>
                             <h4>Описание</h4>
-                            <p>День учителя - профессиональный праздник работников сферы образования.</p>
+                            <p>{event.description}</p>
                         </div>
                         <div>
                             <h4>Дата</h4>
-                            <p>5 октября 2022</p>
+                            <p>{event.datetime}</p>
                         </div>
                         <div>
                             <h4>Место</h4>
-                            <p>АФ КНИТУ-КАИ</p>
+                            <p>{event.place}</p>
                         </div>
                     </div>
-                    <p className='eventBody__price manrope'>Бесплатно</p>
+                    <p className='eventBody__price manrope'>{event.price}</p>
                 </div>
             </div>
         </div>

@@ -50,11 +50,15 @@ body {
     background: #fff;
 }
 
+
+
 .eventsList {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
+
 
 .container {
     width: 100vw;
@@ -69,7 +73,7 @@ body {
     margin-bottom: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .container__input img {
@@ -80,6 +84,17 @@ body {
 .container__input img:hover {
     transform: rotate(360deg);
     transition: transform 2s;
+}
+
+.container__input select {
+    height: 58px;
+    font-size: 24px;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    width: 230px;
+    color: #3E3E3E;
+    background: #DADBDC;
 }
 
 
@@ -94,8 +109,10 @@ body {
 }
 
 
+
 .sliderContainer {
     position: relative;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,4 +213,47 @@ body {
 
 .eventBody__dsc div {
     padding-bottom: 10px;
+}
+
+
+.login-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.form {
+    width: 400px;
+    height: 400px;
+    border-radius: 40px;
+    background: #EBEBEB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form input {
+    width: 230px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #3E3E3E;
+    background-color: #DADBDC;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px;
 }
