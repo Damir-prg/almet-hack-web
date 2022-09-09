@@ -2,9 +2,8 @@ import React from 'react';
 import PostService from '../API/PostService';
 import Events from '../components/Events';
 import Header from '../components/Header';
+import Slider from '../components/Slider';
 import MyInput from '../components/UI/Input/MyInput'
-import Slider from '../components/UI/Slider/Slider';
-import setting_img from "../images/settings.png";
 
 const EventsList = () => {
 

@@ -47,7 +47,7 @@
 body {
     min-height: 100vh;
     background: #EBEBEB;
-    /*fiolet*/
+    background: #fff;
 }
 
 .eventsList {
@@ -92,6 +92,29 @@ body {
     align-items: center;
     justify-content: flex-end;
 }
+
+
+.sliderContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.sliderCenter {
+    position: relative;
+    min-width: 70%;
+    min-height: 530px;
+    margin: 30px;
+    background: none;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 50px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
 
 
 .eventCard {
