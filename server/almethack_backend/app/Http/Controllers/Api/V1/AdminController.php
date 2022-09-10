@@ -11,12 +11,10 @@ use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
-    public function add_admin(Request $request)
+    public function add_admin(Request $request): array
     {
         $data = $request->post();
-        $table = DB::table('admins');
-        $detect_admin = $table->select($data['api_token']);
-//        var_dump($data['name']);
+        $detect_admin = DB::table('admins')->select($data['api_token']);
         if ($detect_admin)
         {
             $new_admin = new Admin();
@@ -44,17 +42,16 @@ class AdminController extends Controller
             return $this->return_info([
                 'operation_type_successfully' => false,
                 'object' => [
-                    'status_code' => 343
+                    'status_code' => 404
                 ]
             ]);
         }
     }
 
-    public function delete_admin(Request $request)
+    public function delete_admin(Request $request): array
     {
         $data = $request->post();
-        $table = DB::table('admins');
-        $detect_admin = $table->select($data['api_token']);
+        $detect_admin = DB::table('admins')->select($data['api_token']);
         if ($detect_admin)
         {
             DB::table('admins')->where('login', '=', $data['login'])->delete();
@@ -73,10 +70,9 @@ class AdminController extends Controller
 
     }
 
-    public function authorize_admin(Request $request)
+    public function authorize_admin(Request $request): array
     {
         $data = $request->post();
-        $table = DB::table('admins');
         if ($this->check_request_requires($request, ['login', 'password']))
         {
             $admin = DB::table('admins')->select()->where('login', '=', $data['login'])->where('password', '=', $data['password'])->first();
@@ -104,7 +100,7 @@ class AdminController extends Controller
         ];
     }
 
-    public function get_all_application(Request $request)
+    public function get_all_application(Request $request): \Illuminate\Database\Eloquent\Collection|array
     {
         if($this->check_request_requires($request, ['api_token']))
         {
@@ -121,7 +117,7 @@ class AdminController extends Controller
         ]);
     }
 
-    public function get_application(Request $request, $id)
+    public function get_application(Request $request, $id): array
     {
         if($this->check_request_requires($request, ['api_token']))
         {
@@ -138,7 +134,7 @@ class AdminController extends Controller
         ]);
     }
 
-    public function delete_application(Request $request, $id)
+    public function delete_application(Request $request, $id): array
     {
         if($this->check_request_requires($request, [
             'api_token',
@@ -169,7 +165,7 @@ class AdminController extends Controller
         ];
     }
 
-    public function add_application(Request $request)
+    public function add_application(Request $request): array
     {
         if($this->check_request_requires($request, [
             'type',
@@ -182,23 +178,25 @@ class AdminController extends Controller
             'price',
             'full_name',
             'organization_name',
+            'email',
             'phone',
         ]))
         {
-            $application = new Application();
-            $application->type = $request->type;
-            $application->name = $request->name;
-            $application->preview = $request->preview;
-            $application->description = $request->description;
-            $application->date = $request->date;
-            $application->time = $request->time;
-            $application->place = $request->place;
-            $application->price = $request->price;
-            $application->full_name = $request->full_name;
-            $application->organization_name = $request->organization_name;
-            $application->phone = $request->phone;
+            $application = new Application([
+                'type' => $request->type,
+                'name' => $request->name,
+                'preview' => $request->preview,
+                'description' => $request->description,
+                'date' => $request->date,
+                'time' => $request->time,
+                'place' => $request->place,
+                'price' => $request->price,
+                'full_name' => $request->full_name,
+                'organization_name' => $request->organization_name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+            ]);
             $application->save();
-
             if($application->exists)
             {
                 return [
@@ -215,12 +213,12 @@ class AdminController extends Controller
         ];
     }
 
-    private function check_request_requires(Request $request, $args)
+    private function check_request_requires(Request $request, $args): array
     {
         return $request->only($args);
     }
 
-    private function find_administrator($api_token)
+    private function find_administrator($api_token): bool
     {
         return DB::table('admins')->where('api_token', '=', $api_token)->exists();
     }

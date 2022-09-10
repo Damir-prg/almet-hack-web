@@ -20,6 +20,7 @@ class Application extends Model
         'price',
         'full_name',
         'organization_name',
+        'email',
         'phone'
     ];
 }

@@ -2,13 +2,11 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Admin;
 use App\Models\Application;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
@@ -18,14 +16,8 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        // \App\Models\UserTest::factory(10)->create();
-
-        // \App\Models\UserTest::factory()->create([
-        //     'name' => 'Test UserTest',
-        //     'email' => 'test@example.com',
-        // ]);
         User::factory(10)->create();
         Admin::factory(1)->create([
             "name" => "Admin",

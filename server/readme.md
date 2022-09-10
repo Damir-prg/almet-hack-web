@@ -1,3 +1,5 @@
+
+
 <h1>Installation AlmetHack Server.</h1>
 <h2>
     <ul>
@@ -8,7 +10,7 @@
             Add to PATH Environment PHP
         </li>
         <li>
-            Open directory <span style="text-decoration: underline">almethack_backend</span> and change the settings in the file <span style="text-decoration: underline;">.env</span>
+            Open directory <strong>almethack_backend</strong> and change the settings in the file <bold>.env</bold>
         </li>
         <li>
             Activate local or other MySQL database server 
@@ -16,10 +18,10 @@
         <li>
             Use this commands:
             <ul>
-                <li><strong>php artisan migrate --seed<strong> (It migrate all tables to database)</li>
+                <li>php artisan migrate --seed (It migrate all tables to database)</li>
                 <li>php artisan serve (Run Laravel app)</li>
             </ul>
-            <br> PS. (Laravel app is runned by default port: 8000)
+            <br> PS. (Laravel app is run by default port: 8000)
         </li>
     </ul>
 </h2>
@@ -58,7 +60,7 @@
                 <li>
                     <h4>The Application was sent correctly and approved.</h4>
                     <ul>
-                        <li>/admin/add/events/.<br> Args: type, name, preview, description, date, time, place, price, full_name, organization_name, phone, api_token.</li><br>
+                        <li>/admin/add/events/.<br> Args: type, name, preview, description, date, time, place, price, full_name, organization_name, email, phone, api_token.</li><br>
                     </ul>
                 </li>
             </ul>

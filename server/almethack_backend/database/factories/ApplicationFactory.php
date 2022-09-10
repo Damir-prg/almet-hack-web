@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Application;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Application>
+ * @extends Factory<Application>
  */
 class ApplicationFactory extends Factory
 {
@@ -14,7 +15,7 @@ class ApplicationFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             "type" => fake()->name(),
@@ -26,6 +27,7 @@ class ApplicationFactory extends Factory
             "place" => fake()->address(),
             "price" => fake()->randomDigit(),
             "full_name" => fake()->lastName.' '.fake()->name,
+            "email" => fake()->email,
             "organization_name" => fake()->name(),
             "phone" => fake()->phoneNumber,
         ];

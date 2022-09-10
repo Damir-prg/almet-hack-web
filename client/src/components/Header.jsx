@@ -1,12 +1,11 @@
 import React from 'react';
-import MyButton from './UI/Button/MyButton';
+import HeaderButton from './UI/HeaderButton/HeaderButton';
 
-const Header = ({children}) => {
+const Header = () => {
     return (
         <div className='header'>
-            <MyButton>
-                {children}
-            </MyButton>
+            <h1>A-FISHKA</h1>
+            <HeaderButton>Войти</HeaderButton>
         </div>
     );
 };
