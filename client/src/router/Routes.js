@@ -1,12 +1,16 @@
 import AdminPage from '../pages/AdminPage';
-import second from '../pages/EventsList';
+import EventsList from '../pages/EventsList';
+import Login from '../pages/Login';
+import RequestsPage from '../pages/RequestsPage';
 
 export const privateRoutes = [
-    {path: '/about', component: <About/>, exact: true},
-    {path: '/posts', component: <Posts/>, exact: true},
-    {path: '/posts/:id', component: <PostIdPage/>, exact: true}
+    {path: '/admin', component: <AdminPage/>, exact: true},
+    {path: '/events', component: <EventsList/>, exact: true},
+    {path: '/request', component: <RequestsPage/>, exact: true},
 ]
 
 export const publicRoutes = [
-    {path: '/events', component: <Login/>, exact: true}
+    {path: '/events', component: <EventsList/>, exact: true},
+    {path: '/request', component: <RequestsPage/>, exact: true},
+    {path: '/login', component: <Login/>, exact: true},
 ]

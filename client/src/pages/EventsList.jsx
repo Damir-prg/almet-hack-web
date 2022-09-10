@@ -5,26 +5,42 @@ import Slider from '../components/Slider';
 import PostService from '../API/PostService'
 import {useEvents} from '../hooks/useEvents'
 import EventFilter from '../components/EventFilter';
-import MyModal from '../components/UI/MyModal/MyModal'
-import AdminFrom from '../components/AdminFrom';
+import {AuthContext} from '../context/AuthContext'
+import { Link, useNavigate } from "react-router-dom";
+import Loader from '../components/UI/Loader/Loader'
 
 const EventsList = () => {
+    const router = useNavigate();
+    const {isAuth, setIsAuth} = React.useContext(AuthContext);
     const [filter, setFilter] = React.useState({ sort: '', query: '' });
     const [events, setEvents] = React.useState([])
     const sortedAndSearchedEvents = useEvents(events, filter.sort, filter.query);
-    console.log(filter)
+
 
     React.useEffect(() => {
         async function fetchData() {
             const response = await PostService.getAll();
-            setEvents([...events, ...response.data])
+            setEvents([...events, ...response.data]);
         }
         fetchData();
     }, []);
 
+    const clearStorage = () => {
+        setIsAuth(false);
+        localStorage.clear();
+    }
+
+    const toLink = () => {
+        if (isAuth) {
+            return <Link to='/events' onClick={clearStorage}>Выйти</Link>
+        } else {
+            return <Link to='/login'>Войти</Link>
+        }
+    }
+
     return (
         <div className='eventsList'>
-            <Header/>
+            <Header isList={true}>{toLink()}</Header>
             <Slider />
             <EventFilter
                 filter={filter}

@@ -51,6 +51,7 @@
 
 .items__text h1 {
     text-overflow: clip;
+    font-family: 'Euclid Circular A SemiBold';
     font-size: 64px;
 }
 

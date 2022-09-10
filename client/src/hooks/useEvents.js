@@ -13,7 +13,6 @@ export const useSortedEvents = (events, sort) => {
 
 export const useEvents = (events, sort, query) => {
     const sortedEvents = useSortedEvents(events, sort);
-    console.log(events)
     
     const sortedAndSearchedEvents = useMemo(() => {
         return sortedEvents.filter(event =>  event.name.toLowerCase().includes(query))
