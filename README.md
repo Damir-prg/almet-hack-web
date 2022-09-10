@@ -1,6 +1,6 @@
 # Команда "Новатор".
-## Client - React JS
+- ## Client - React JS
 
-## Backend - Laravel (PHP-8.0.23)
-- ### Открыть папку server. Открыть файл readme.md
+- ## Backend - Laravel (PHP-8.0.23)
+-- ### Открыть папку server. Открыть файл readme.md
 
