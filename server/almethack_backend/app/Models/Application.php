@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Application extends Model
 {
     use HasFactory;
 
@@ -20,11 +20,6 @@ class Event extends Model
         'price',
         'full_name',
         'organization_name',
-        'phone',
+        'phone'
     ];
-
-    public  function admin()
-    {
-        $this->belongsTo(Admin::class);
-    }
 }
