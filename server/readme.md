@@ -17,7 +17,7 @@
             Use this commands:
             <ul>
                 <li><strong>php artisan migrate --seed<strong> (It migrate all tables to database)</li>
-                <li><span>**php artisan serve**</span> (Run Laravel app)</li>
+                <li>php artisan serve (Run Laravel app)</li>
             </ul>
             <br> PS. (Laravel app is runned by default port: 8000)
         </li>
@@ -31,8 +31,8 @@
         <li>
             <h3>Events. Method: GET.</h3>
             <ul>
-                <li><span>**/events/**</span>.<br> Get all Events on DataBase.</li><br>
-                <li><span>**/events/get/{id}**</span>. <br> Get Event on DataBase with id.</li><br>
+                <li>/events/.<br> Get all Events on DataBase.</li><br>
+                <li>/events/get/{id}. <br> Get Event on DataBase with id.</li><br>
             </ul>
         </li>
         <li>
@@ -41,24 +41,24 @@
                 <li>
                     <h4>Admin add, delete and authorization.</h4>
                     <ul>
-                        <li><span>**/admin/add/**</span>.<br> Add admin, args: login, password, name, api_token.</li><br>
-                        <li><span>**/admin/delete/**</span>.<br> Delete admin, args: login, api_token.</li><br>
-                        <li><span>**/admin/auth/**</span>.<br> Authorize admin, args: login, password. Return: id, api_token</li><br>
+                        <li>/admin/add/.<br> Add admin, args: login, password, name, api_token.</li><br>
+                        <li>/admin/delete/.<br> Delete admin, args: login, api_token.</li><br>
+                        <li>/admin/auth/.<br> Authorize admin, args: login, password. Return: id, api_token</li><br>
                     </ul>
                 </li>
                 <li>
                     <h4>Application add, get, delete.</h4>
                     <ul>
-                        <li><span>**/admin/add/application/**</span>.<br> Add Application, args: type, name, preview, description, date, time, place, price, full_name, organization_name, phone.</li><br>
-                        <li><span>**/admin/get/applications/**</span>.<br> Get all Applications on DataBase, args: api_token.</li><br>
-                        <li><span>**/admin/get/applications/{id}**</span>.<br> Get Application on DataBase with id, args: api_token, id.</li><br>
-                        <li><span>**/admin/delete/applications/{id}**</span>.<br> Delete Application on DataBase with id, args: api_token, id.</li><br>
+                        <li>/admin/add/application/.<br> Add Application, args: type, name, preview, description, date, time, place, price, full_name, organization_name, phone.</li><br>
+                        <li>/admin/get/applications/.<br> Get all Applications on DataBase, args: api_token.</li><br>
+                        <li>/admin/get/applications/{id}.<br> Get Application on DataBase with id, args: api_token, id.</li><br>
+                        <li>/admin/delete/applications/{id}.<br> Delete Application on DataBase with id, args: api_token, id.</li><br>
                     </ul>
                 </li>
                 <li>
                     <h4>The Application was sent correctly and approved.</h4>
                     <ul>
-                        <li><span>**/admin/add/events/**</span>.<br> Args: type, name, preview, description, date, time, place, price, full_name, organization_name, phone, api_token.</li><br>
+                        <li>/admin/add/events/.<br> Args: type, name, preview, description, date, time, place, price, full_name, organization_name, phone, api_token.</li><br>
                     </ul>
                 </li>
             </ul>
