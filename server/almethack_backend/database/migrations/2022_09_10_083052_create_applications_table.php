@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create(table: 'events', callback: function (Blueprint $table){
+        Schema::create('applications', function (Blueprint $table) {
             $table->id();
             $table->string('type');
             $table->string('name');
@@ -28,7 +28,6 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('organization_name');
             $table->string('phone');
-            $table->foreignId('admin_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
@@ -40,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('applications');
     }
 };
