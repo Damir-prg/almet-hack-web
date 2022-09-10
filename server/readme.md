@@ -16,7 +16,7 @@
         <li>
             Use this commands:
             <ul>
-                <li><span>**php artisan migrate --seed**</span> (It migrate all tables to database)</li>
+                <li>**php artisan migrate --seed** (It migrate all tables to database)</li>
                 <li><span>**php artisan serve**</span> (Run Laravel app)</li>
             </ul>
             <br> PS. (Laravel app is runned by default port: 8000)
