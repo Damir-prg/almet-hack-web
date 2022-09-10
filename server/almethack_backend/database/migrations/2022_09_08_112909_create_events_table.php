@@ -11,7 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(table: 'events', callback: function (Blueprint $table){
             $table->id();
@@ -19,10 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('preview');
             $table->text('description');
-
             $table->date('date');
             $table->time('time');
-//            $table->dateTime('datetime');
             $table->string('place');
             $table->string('price');
             $table->string('full_name');
@@ -38,7 +36,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('events');
     }
