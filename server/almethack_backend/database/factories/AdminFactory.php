@@ -21,7 +21,7 @@ class AdminFactory extends Factory
         return [
             'name' => fake()->name,
             'login' => Str::random(),
-            'password' => bcrypt(fake()->password),
+            'password' => fake()->password,
             'fully_access' => 0,
             'remember_token' => Str::random(10),
             'api_token' => Str::random(64),
