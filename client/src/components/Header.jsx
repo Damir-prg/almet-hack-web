@@ -11,10 +11,21 @@ const Header = ({ children, isList }) => {
     return (
         <div className='header'>
             {isList
-                ?
-                <MyButton>
-                    <Link to='/request'>Предолжить мероприятие</Link>
-                </MyButton>
+                ? isAuth
+                    ? <div className='header__two'>
+                        <MyButton>
+                            <Link to='/admin'>заявки</Link>
+                        </MyButton>
+                        <MyButton>
+                            <Link to='/request'>Предолжить мероприятие</Link>
+                        </MyButton>
+                    </div>
+                    :
+                    <div className='header__two'>
+                        <MyButton>
+                            <Link to='/request'>Предолжить мероприятие</Link>
+                        </MyButton>
+                    </div>
                 : false
             }
             <MyButton>

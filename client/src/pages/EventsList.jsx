@@ -27,7 +27,6 @@ const EventsList = () => {
 
     const clearStorage = () => {
         setIsAuth(false);
-        localStorage.clear();
     }
 
     const toLink = () => {
@@ -46,7 +45,7 @@ const EventsList = () => {
                 filter={filter}
                 setFilter={setFilter}
             />
-            <Events events={sortedAndSearchedEvents} />
+            <Events events={sortedAndSearchedEvents} isAdmin={false}/>
         </div>
     );
 };

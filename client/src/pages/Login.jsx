@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/App.css'
 import Header from '../components/Header';
-import HeaderButton from '../components/UI/HeaderButton/HeaderButton'
 import MyButton from '../components/UI/Button/MyButton';
 import PostService from '../API/PostService'
 import Loader from '../components/UI/Loader/Loader';
