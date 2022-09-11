@@ -39,7 +39,7 @@ export default class PostService {
     }
 
     static async deleteEventRequest(data) {
-        удаление 
+        // удаление заявки
         const responce = await axios.post(`http://192.168.116.8:8000/api/v1/admin/delete/application`, data);
         return responce;
     }
