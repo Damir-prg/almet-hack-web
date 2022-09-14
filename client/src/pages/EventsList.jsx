@@ -20,6 +20,7 @@ const EventsList = () => {
     React.useEffect(() => {
         async function fetchData() {
             const response = await PostService.getAll();
+            console.log(response.data)
             setEvents([...events, ...response.data]);
         }
         fetchData();

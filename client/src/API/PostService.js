@@ -4,7 +4,7 @@ export default class PostService {
 
     static async getAll() {
         // Получение всех эвентов
-        const response = await axios.get('http://192.168.116.8:8000/api/v1/events');
+        const response = await axios.get('https://631a28bd8e51a64d2bf78b0a.mockapi.io/api/v1/events');
         return response;
     }
 
@@ -39,7 +39,7 @@ export default class PostService {
     }
 
     static async deleteEventRequest(data) {
-        // удаление заявки
+        // удаление завки
         const responce = await axios.post(`http://192.168.116.8:8000/api/v1/admin/delete/application`, data);
         return responce;
     }

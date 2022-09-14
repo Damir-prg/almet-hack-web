@@ -17,13 +17,13 @@ const Header = ({ children, isList }) => {
                             <Link to='/admin'>заявки</Link>
                         </MyButton>
                         <MyButton>
-                            <Link to='/request'>Предолжить мероприятие</Link>
+                            <Link to='/request'>Предложить мероприятие</Link>
                         </MyButton>
                     </div>
                     :
                     <div className='header__two'>
                         <MyButton>
-                            <Link to='/request'>Предолжить мероприятие</Link>
+                            <Link to='/request'>Предложить мероприятие</Link>
                         </MyButton>
                     </div>
                 : false
